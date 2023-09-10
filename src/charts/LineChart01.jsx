@@ -31,7 +31,7 @@ function LineChart01({ data, width, height }) {
   const [chart, setChart] = useState(null);
   const canvas = useRef(null);
   const { currentTheme } = useThemeProvider();
-  const darkMode = currentTheme === "dark";
+  const darkMode = currentTheme === "light";
   const { tooltipBodyColor, tooltipBgColor, tooltipBorderColor, chartAreaBg } =
     chartColors;
 
@@ -43,7 +43,7 @@ function LineChart01({ data, width, height }) {
       data,
       options: {
         chartArea: {
-          backgroundColor: darkMode ? chartAreaBg.dark : chartAreaBg.light
+          backgroundColor: darkMode ? chartAreaBg.light : chartAreaBg.dark
         },
         layout: {
           padding: 20
@@ -69,13 +69,13 @@ function LineChart01({ data, width, height }) {
               // label: (context) => formatValue(context.parsed.y)
             },
             bodyColor: darkMode
-              ? tooltipBodyColor.dark
+              ? tooltipBodyColor.light
               : tooltipBodyColor.light,
             backgroundColor: darkMode
-              ? tooltipBgColor.dark
+              ? tooltipBgColor.light
               : tooltipBgColor.light,
             borderColor: darkMode
-              ? tooltipBorderColor.dark
+              ? tooltipBorderColor.light
               : tooltipBorderColor.light
           },
           legend: {
@@ -96,12 +96,11 @@ function LineChart01({ data, width, height }) {
 
   useEffect(() => {
     if (!chart) return;
-
     if (darkMode) {
-      chart.options.chartArea.backgroundColor = chartAreaBg.dark;
-      chart.options.plugins.tooltip.bodyColor = tooltipBodyColor.dark;
-      chart.options.plugins.tooltip.backgroundColor = tooltipBgColor.dark;
-      chart.options.plugins.tooltip.borderColor = tooltipBorderColor.dark;
+      chart.options.chartArea.backgroundColor = chartAreaBg.light;
+      chart.options.plugins.tooltip.bodyColor = tooltipBodyColor.light;
+      chart.options.plugins.tooltip.backgroundColor = tooltipBgColor.light;
+      chart.options.plugins.tooltip.borderColor = tooltipBorderColor.light;
     } else {
       chart.options.chartArea.backgroundColor = chartAreaBg.light;
       chart.options.plugins.tooltip.bodyColor = tooltipBodyColor.light;

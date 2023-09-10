@@ -60,10 +60,10 @@ function LineChart02({ data, width, height }) {
             ticks: {
               maxTicksLimit: 5,
               callback: (value) => formatValue(value),
-              color: darkMode ? textColor.dark : textColor.light
+              color: darkMode ? textColor.light : textColor.light
             },
             grid: {
-              color: darkMode ? gridColor.dark : gridColor.light
+              color: darkMode ? gridColor.light : gridColor.light
             }
           },
           x: {
@@ -84,7 +84,7 @@ function LineChart02({ data, width, height }) {
             ticks: {
               autoSkipPadding: 48,
               maxRotation: 0,
-              color: darkMode ? textColor.dark : textColor.light
+              color: darkMode ? textColor.light : textColor.light
             }
           }
         },
@@ -98,13 +98,13 @@ function LineChart02({ data, width, height }) {
               label: (context) => formatValue(context.parsed.y)
             },
             bodyColor: darkMode
-              ? tooltipBodyColor.dark
+              ? tooltipBodyColor.light
               : tooltipBodyColor.light,
             backgroundColor: darkMode
-              ? tooltipBgColor.dark
+              ? tooltipBgColor.light
               : tooltipBgColor.light,
             borderColor: darkMode
-              ? tooltipBorderColor.dark
+              ? tooltipBorderColor.light
               : tooltipBorderColor.light
           }
         },
@@ -179,12 +179,12 @@ function LineChart02({ data, width, height }) {
     if (!chart) return;
 
     if (darkMode) {
-      chart.options.scales.x.ticks.color = textColor.dark;
-      chart.options.scales.y.ticks.color = textColor.dark;
-      chart.options.scales.y.grid.color = gridColor.dark;
-      chart.options.plugins.tooltip.bodyColor = tooltipBodyColor.dark;
-      chart.options.plugins.tooltip.backgroundColor = tooltipBgColor.dark;
-      chart.options.plugins.tooltip.borderColor = tooltipBorderColor.dark;
+      chart.options.scales.x.ticks.color = textColor.light;
+      chart.options.scales.y.ticks.color = textColor.light;
+      chart.options.scales.y.grid.color = gridColor.light;
+      chart.options.plugins.tooltip.bodyColor = tooltipBodyColor.light;
+      chart.options.plugins.tooltip.backgroundColor = tooltipBgColor.light;
+      chart.options.plugins.tooltip.borderColor = tooltipBorderColor.light;
     } else {
       chart.options.scales.x.ticks.color = textColor.light;
       chart.options.scales.y.ticks.color = textColor.light;

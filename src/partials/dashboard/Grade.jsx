@@ -10,6 +10,7 @@ import {
 } from "chart.js";
 // Import utilities
 import { tailwindConfig } from "../../utils/Utils";
+import gradeStats from "../../data/mockData";
 import useGradeStats from "../../hooks/dashboard/useGradeStats";
 
 ChartJS.register(
@@ -30,12 +31,19 @@ export const options = {
     title: {
       display: true,
       text: "Chart.js Bar Chart"
+    },
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+      suggestedMin: 0,
+      suggestedMax: 60
     }
   }
 };
 
 function Grade() {
-  const { labels, values } = useGradeStats();
+  const { labels, values } = gradeStats();
   const data = {
     labels,
     datasets: [

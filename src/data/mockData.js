@@ -1,7 +1,10 @@
-export const gradeStats = {
-  labels: ["大一", "大二", "大三", "大四", "研究所"],
-  values: ["2", "10", "57", "19", "25"]
+const gradeStats = () => {
+  return {
+      labels: ["大一", "大二", "大三", "大四", "研究所"],
+      values: ["2", "10", "57", "19", "25"]
+  };
 };
+export default gradeStats;
 
 export const applicationStats = {
   labels: [

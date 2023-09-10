@@ -74,6 +74,6 @@ export const chartColors = {
   },
   chartAreaBg: {
     light: tailwindConfig().theme.colors.slate[50],
-    dark: `rgba(${hexToRGB(tailwindConfig().theme.colors.slate[900])}, 0.24)`
+    dark: `rgba(${hexToRGB(tailwindConfig().theme.colors.slate[100])}, 0.24)`
   }
 };

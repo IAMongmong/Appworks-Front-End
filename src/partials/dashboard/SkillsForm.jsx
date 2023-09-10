@@ -4,11 +4,11 @@ import usePostSkills from "../../hooks/dashboard/usePostSkills";
 function SkillsForm() {
   const [studentId, setStudentId] = useState();
   const [skills, setSkills] = useState({
-    UIUX: 0,
-    backend: 0,
-    "business analysis": 0,
-    "design thinking": 0,
-    frontend: 0
+    "UIUX   ": 0,
+    "backend   ": 0,
+    "business analysis   ": 0,
+    "design thinking   ": 0,
+    "frontend   ": 0
   });
   const postForm = usePostSkills();
 
@@ -29,8 +29,8 @@ function SkillsForm() {
           postForm(studentId, skills);
         }}
       >
-        <div className="mb-4">
-          <label className="mb-2">請輸入學號</label>
+        <div className="mb-6">
+          <label className="mb-6">請輸入學號</label>
           <input
             type="text"
             className="w-full border rounded"
@@ -39,7 +39,7 @@ function SkillsForm() {
           />
         </div>
         {Object.keys(skills).map((skill) => (
-          <div className="" key={skill}>
+          <div className="mb-6" key={skill}>
             <label className="">{skill}</label>
             <select
               className="border rounded"
