@@ -2,14 +2,18 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 
 const usePostSkills = () => {
-  const [, setCookie] = useCookies(["studentId"]);
-  return async (studentId, skills) => {
+  const [, setCookie] = useCookies(["student_id"]);
+  return async (student_id, skills) => {
     try {
-      await axios.post(`https://api.projectszero.tech/skills/${studentId}`, {
+      await axios.post(`https://api.projectszero.tech/skills/${student_id}`, {
         skill: skills,
-        thisIsDefinitelyWrong: true
+          "UIUX": 6,
+          "backend": 7,
+          "business analysis": 9,
+          "design thinking": 5,
+          "frontend": 8
       });
-      setCookie("studentId", studentId);
+      setCookie("student_id", student_id);
       alert("送出成功");
     } catch (error) {
       alert(error);

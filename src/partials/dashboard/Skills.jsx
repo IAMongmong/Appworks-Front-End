@@ -10,7 +10,7 @@ import {
 import { Radar } from "react-chartjs-2";
 
 // Import utilities
-// import { useCookies } from "react-cookie";
+import { useCookies } from "react-cookie";
 import { tailwindConfig } from "../../utils/Utils";
 import { skills } from "../../data/mockData";
 
@@ -24,9 +24,9 @@ ChartJS.register(
 );
 
 function Skills() {
-  // const [cookies] = useCookies(["studentId"]);
-  // const { studentId } = cookies;
-  const studentId = "B11000000";
+  const [cookies] = useCookies(["student_id"]);
+  // const { student_id } = cookies;
+  const student_id = "B11000000";
   const { labels, values } = skills;
   const chartData = {
     labels,
@@ -49,9 +49,9 @@ function Skills() {
           Skills
         </h2>
       </header>
-      {studentId ? (
+      {student_id ? (
         <div className="flex align-center flex-col px-28">
-          <div className="text-center my-4">學號：{studentId}</div>
+          <div className="text-center my-4">學號：{student_id}</div>
           <Radar data={chartData} />
         </div>
       ) : (
