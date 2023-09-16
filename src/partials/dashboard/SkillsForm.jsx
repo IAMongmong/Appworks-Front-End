@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import usePostSkills from "../../hooks/dashboard/usePostSkills";
 
+
 function SkillsForm() {
-  // const [studentId, setStudentId] = useState();//原版
+  // const [studentId, setStudentId] = useState(); //原版
   const [student_id, setStudentId] = useState();
   const [skills, setSkills] = useState({
     "UIUX": 0,

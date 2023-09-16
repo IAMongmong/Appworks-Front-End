@@ -6,15 +6,16 @@ const usePostSkills = () => {
   return async (student_id, skills) => {
     try {
       await axios.post(`https://api.projectszero.tech/skills/${student_id}`, {
-        skill: skills,
-          "UIUX": 6,
-          "backend": 7,
-          "business analysis": 9,
-          "design thinking": 5,
-          "frontend": 8
+        "UIUX": skills["UIUX"],
+        "backend": skills["backend"],
+        "business analysis": skills["business analysis"],
+        "design thinking": skills["design thinking"],
+        "frontend": skills["frontend"],
       });
       setCookie("student_id", student_id);
       alert("送出成功");
+      console.log(student_id)
+      console.log(skills);
     } catch (error) {
       alert(error);
     }
